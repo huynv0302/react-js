@@ -4,18 +4,26 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = { repoNames: [] };
+  }
+
+  componentDidMount() {
+    let self = this;
+    fetch("https://api.github.com/repositories", {method: 'get'})
+      .then((response) => { return response.json(); })
+      .then((repos) => {
+        self.setState({ repoNames: repos.map((r) => { return r.name; })});
+      });
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+      <ol>
+        {this.state.repoNames.map((r, i) => { return <li key={i}>{r}</li> })}
+      </ol>
+    )
   }
 }
 
