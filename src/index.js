@@ -4,32 +4,32 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-window.onerror = function (message, url, lineNo, colNo, error) {
+// window.onerror = function (message, url, lineNo, colNo, error) {
 
-   console.log(arguments);
+//    console.log(arguments);
 
-   let container = document.createElement('div');
+//    let container = document.createElement('div');
 
-   container.style.color = 'red';
-   container.style.position = 'fixed';
-   container.style.background = '#eee';
-   container.style.padding = '2em';
-   container.style.top = '1em';
-   container.style.left = '1em';
+//    container.style.color = 'red';
+//    container.style.position = 'fixed';
+//    container.style.background = '#eee';
+//    container.style.padding = '2em';
+//    container.style.top = '1em';
+//    container.style.left = '1em';
 
-   let msg = document.createElement('pre');
-   msg.innerText = [
-      'Message: ' + message,
-      'URL: ' + url,
-      'Line: ' + lineNo,
-      'Column: ' + colNo,
-      'Stack: ' + (error && error.stack)
-   ].join('\n');
+//    let msg = document.createElement('pre');
+//    msg.innerText = [
+//       'Message: ' + message,
+//       'URL: ' + url,
+//       'Line: ' + lineNo,
+//       'Column: ' + colNo,
+//       'Stack: ' + (error && error.stack)
+//    ].join('\n');
 
-   container.appendChild(msg);
+//    container.appendChild(msg);
 
-   document.body.appendChild(container);
-};
+//    document.body.appendChild(container);
+// };
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
