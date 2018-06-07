@@ -6,25 +6,46 @@ import './App.css';
 class App extends Component {
   constructor() {
     super();
-    this.state = { repoNames: [] };
-  }
-
-  componentDidMount() {
-    let self = this;
-    fetch("https://api.github.com/repositories", {method: 'get'})
-      .then((response) => { return response.json(); })
-      .then((repos) => {
-        self.setState({ repoNames: repos.map((r) => { return r.name; })});
-      });
+    this.state = {
+      data : [
+        {
+          id : 1,
+          name : 'huy',
+          age : 20
+        },
+        {
+          id : 2,
+          name : 'tung',
+          age : 20
+        },
+        {
+          id : 3,
+          name : 'tuan',
+          age : 20
+        },
+        {
+          id : 4,
+          name : 'trung',
+          age : 20
+        },
+        {
+          id : 5,
+          name : 'hung',
+          age : 20
+        }
+      ]
+    };
   }
 
   render() {
     return (
-      <ol>
-        {this.state.repoNames.map((r, i) => { return <li key={i}>{r}</li> })}
-      </ol>
-    )
+         <div>
+            <table border="1">
+                {this.state.data.map((r, i) => {return <tr key={i}><td>{r['id']}</td><td>{r['name']}</td><td>{r['age']}</td></tr>})}
+            </table>
+        </div>
+        )
+    }
   }
-}
 
-export default App;
+  export default App;
