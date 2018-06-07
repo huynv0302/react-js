@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "buttercms": "^1.1.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "webpack": "^4.11.1"
   },
   "scripts": {
     "start": "react-scripts start",
