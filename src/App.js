@@ -10,23 +10,21 @@ class App extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      let self = this;
-      fetch("https://api.github.com/repositories", {method: 'get'})
+    let self = this;
+    fetch("https://api.github.com/repositories", {method: 'get'})
       .then((response) => { return response.json(); })
       .then((repos) => {
         self.setState({ repoNames: repos.map((r) => { return r.name; })});
       });
-    }, 5000)
   }
 
   render() {
     return (
       <ol>
-      {this.state.repoNames.map((r, i) => { return <li key={i}>{r}</li> })}
-        </ol>
-        )
-    }
+        {this.state.repoNames.map((r, i) => { return <li key={i}>{r}</li> })}
+      </ol>
+    )
   }
+}
 
-  export default App;
+export default App;
