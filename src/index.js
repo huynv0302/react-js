@@ -5,12 +5,12 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import ReactSEO from 'react-seo';
 
-// ReactSEO.startMagic([{url: '/', isFullMatch:true, ajaxFunction: App, urlParams:[]}],renderDOM);
+ReactSEO.startMagic([{url: '/', isFullMatch:true, ajaxFunction: App, urlParams:['https://api.github.com/repositories']}],renderDOM);
 
-// function renderDOM(){
-// 	ReactDOM.render(<App />, document.getElementById('root'));
-// 	registerServiceWorker();
-// }
-
-ReactDOM.render(<App />, document.getElementById('root'));
+function renderDOM(){
+	ReactDOM.render(<App />, document.getElementById('root'));
 	registerServiceWorker();
+}
+
+// ReactDOM.render(<App />, document.getElementById('root'));
+// 	registerServiceWorker();
