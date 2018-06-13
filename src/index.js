@@ -5,9 +5,10 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import ReactSEO from 'react-seo';
 
-ReactSEO.startMagic([{url: ['/products/'], isFullMatch:false, ajaxFunction: App, urlParams:[]}],renderDOM);
+ReactSEO.startMagic([{url: '/', isFullMatch:true, ajaxFunction: App, urlParams:[]}],renderDOM);
 
 function renderDOM(){
 	ReactDOM.render(<App />, document.getElementById('root'));
+	registerServiceWorker();
 }
 
